@@ -1,7 +1,6 @@
 import random
 
 def initialize_game(lower_bound=1, upper_bound=100, max_attempts=10):
-    """Initialize the game with default or provided settings."""
     return {
         'lower_bound': lower_bound,
         'upper_bound': upper_bound,
@@ -12,7 +11,6 @@ def initialize_game(lower_bound=1, upper_bound=100, max_attempts=10):
     }
 
 def make_guess(game_state, guess):
-    """Make a guess and update the game state."""
     game_state['attempts'] += 1
     if guess < game_state['target_number']:
         return "Your guess is too low."
@@ -23,11 +21,9 @@ def make_guess(game_state, guess):
     return "Congratulations! You've guessed the number!"
 
 def is_game_over(game_state):
-    """Check if the game is over."""
     return game_state['guessed_correctly'] or game_state['attempts'] >= game_state['max_attempts']
 
 def play_game():
-    """Play the Number Guessing Game."""
     game_state = initialize_game()
     print(f"Welcome to the Number Guessing Game!")
     print(f"I'm thinking of a number between {game_state['lower_bound']} and {game_state['upper_bound']}.")
@@ -48,5 +44,4 @@ def play_game():
         print(f"Sorry, you've used all your attempts. The number was {game_state['target_number']}.")
 
 if __name__ == "__main__":
-    play_game()
     play_game()
